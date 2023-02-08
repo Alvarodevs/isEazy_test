@@ -5,15 +5,20 @@ module.exports = {
     extend: {
       colors: {
         'main': '#F1237F',
-        'secondary': '#FFFFFF'
+        'white': '#FFFFFF',
+        'blue': '#0C8CFA',
+        'red': '#FA5939'
       }
     },
     fontFamily: {
-      Archivo: ["Achivo, sans-serif"]
+      Titilium: ["Titilium, sans-serif"]
     }, 
     screens: {
       sm: "640px",
       md: "770px"
+    },
+    borderWidth: {
+      '1': '1px'
     }
   },
   plugins: [],
