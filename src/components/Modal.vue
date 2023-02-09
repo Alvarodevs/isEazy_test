@@ -31,7 +31,12 @@
                   leave-to-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                >
                   <div
-                     class="relative transform w-96 h-full rounded-md bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl border-red border-1"
+                     @dragenter.prevent="toggleActive"
+                     @dragleave.prevent="toggleActive"
+                     @dragover.prevent
+                     @drop.prevent="toggleActive"
+                     :class="{'active-drop' : active}"
+                     class="relative dropzone transform w-96 h-full rounded-md bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl border-red border-1"
                      v-show="isModalActive"
                   >
                      <HeaderModal @modalFalse="setModalFalse" />
@@ -46,6 +51,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import HeaderModal from "./HeaderModal.vue";
 import Chat from "./Chat.vue";
 import Footer from "./Footer.vue";
@@ -64,5 +70,19 @@ export default {
          this.$emit("modalFalse", false);
       },
    },
+   setup(){
+      const active = ref(false)
+      const toggleActive = () => {
+         active.value = !active.value
+      }
+      return {active, toggleActive}
+   }
 };
 </script>
+
+<style>
+   .active-drop{
+      opacity: 0.8;
+      filter: grayscale(70%);
+   }
+</style>

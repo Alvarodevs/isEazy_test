@@ -6,7 +6,9 @@
             <img src="../assets/iseazy-logo-menu-white.svg" alt="logo" />
             <h2 class="pt-1 text-2xl">chat test</h2>
          </div>
-         <h3 class="text-center m-5 text-xl">Click button below to open chat modal</h3>
+         <h3 class="text-center m-5 text-xl">
+            Click button below to open chat modal
+         </h3>
          <button
             type="button"
             class="w-max text-2xl px-3 m-auto border-2 border-main text-main rounded-md hover:border-white hover:bg-main hover:text-white ease-in-out duration-300"
@@ -14,12 +16,17 @@
          >
             Open
          </button>
-      </section>      
+      </section>
    </main>
-   <Modal :isModalActive="isModalActive" @modalFalse="closeModal"/>
+   <Modal
+      :isModalActive="isModalActive"
+      @modalFalse="closeModal"
+      @drop.prevent="drop"
+   />
 </template>
 
 <script>
+import { useChatStore } from "../store/chat";
 export default {
    data() {
       return {
@@ -27,9 +34,16 @@ export default {
       };
    },
    methods: {
-    closeModal(value){
-      this.isModalActive = value
-    }
-   }
+      closeModal(value) {
+         this.isModalActive = value;
+      },
+   },
+   setup() {
+      const chatStore = useChatStore();
+      const drop = (e) => {
+         chatStore.addFileToChat(e.dataTransfer.files[0])
+      };
+      return { drop };
+   },
 };
 </script>

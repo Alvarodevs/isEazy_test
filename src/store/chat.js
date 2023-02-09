@@ -52,12 +52,30 @@ export const useChatStore = defineStore('chat', {
    }),
    actions: {
       addEntryToChat(entry){
-         this.chat.push(entry);
+         console.log(entry)
+         //this.chat.push(entry);
+      },
+      addFileToChat(entry){
+         let versionLength = 0
+         this.chat.map(item => {item.type === 'file' ? versionLength += 1 : null})
+         const timeStamp = new Date(Date.now())
+         
+         const fileObject = {
+            type: 'file',
+            date: dateTransform(timeStamp),
+            data: {
+               version: `VERSIÓN ${versionLength + 1}`,
+               title: entry.name,
+               doc_type: entry.type.replace('application', 'Documento ').replace('/pdf', '/ PDF'),  
+               size: '(' + (Math.round(`${entry.size}` / 1024 * 100) / 100).toFixed(2) +` MB)` 
+            }
+         }
+         this.chat.push(fileObject);
       }
    }
 })
 
-function dateTransform(date) {
+function dateTransform  (date) {
    const day = date.getDate()
    const month = date.toLocaleString('default', {month: 'short'})
    const year = date.getFullYear()
