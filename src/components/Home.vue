@@ -20,7 +20,6 @@
 </template>
 
 <script>
-//import Modal from './Modal.vue';
 export default {
    data() {
       return {
