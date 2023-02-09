@@ -1,6 +1,6 @@
 <template lang="">
    <div
-      class="bg-white w-full px-5 py-6 sm:flex sm:flex-row sm:px-6 justify-between border-t-2 border-grey-border-input"
+      class="bg-white w-full px-5 py-6 sm:flex sm:flex-row sm:px-6 rounded-b-md justify-between border-t-2 border-grey-border-input"
    >
       <div class="relative w-11/12 rounded-3xl shadow-sm">
          <input

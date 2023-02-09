@@ -1,13 +1,13 @@
 <template>
    <div class="w-full p-2">
       <div
-         class="w-11/12 flex justify-between m-auto pb-2 border-b-1 border-grey-border-input"
+         class="w-11/12 flex justify-between m-auto py-2 border-grey-border-input"
+         :class="data.data.version === 'VERSIÓN 1' ? 'border-b-1' : 'border-y-1'"
       >
-         <div class="w-2/3 pl-5">
-            <!-- {{ data }} -->
-            <h4>{{ data.data.version }}</h4>
-            <p>{{ data.data.title }}</p>
-            <div class="flex gap-3 text-sm">
+         <div class="w-full pl-5">
+            <h4 class="font-bold text-xs mb-1">{{ data.data.version }}</h4>
+            <p class="text-blue font-bold mb-1">{{ data.data.title }}</p>
+            <div class="flex gap-3 text-sm font-semibold">
                <p>{{ data.data.doc_type }}</p>
                <p>{{ data.data.size }}</p>
                <p>{{ data.date }}</p>

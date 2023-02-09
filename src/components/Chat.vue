@@ -1,5 +1,5 @@
 <template lang="">
-   <div class="w-full flex flex-col">
+   <div class="w-full flex flex-col h-5/6 overflow-y-scroll">
       <div v-for="entry in chatStore.chat">
          <div v-if="entry.type === 'file'">
             <FileEntry :data=entry></FileEntry>
