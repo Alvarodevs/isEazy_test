@@ -8,16 +8,29 @@
             name="message"
             id="message"
             class="block rounded-3xl h-full w-full px-4 text-lg bg-grey-bg border-grey-border focus-visible:border-blue"
+            v-model="message"
          />
       </div>
-      <button type="button">
+      <button type="button" @click="submit">
          <div class="max-w-[40px] m-auto">
             <img src="../assets/send.png" alt="Send message" />
          </div>
       </button>
    </div>
 </template>
-<script>
-export default {};
+
+<script setup>
+import { ref } from 'vue';
+import { useChatStore } from "../store/chat";
+const chatStore = useChatStore();
+
+const message = ref('')
+
+function submit () {
+   chatStore.addMessageToChat({
+      type: "student",
+      message: message.value,
+   });
+   return message.value = ''
+}
 </script>
-<style lang=""></style>

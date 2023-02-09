@@ -47,22 +47,28 @@ const initialState = [
 ]
 
 export const useChatStore = defineStore('chat', {
+   
    state: () => ({
       chat: initialState,
    }),
-   actions: {
-      addEntryToChat(entry){
-         console.log(entry)
-         //this.chat.push(entry);
+   actions: {  
+      addMessageToChat(entry){
+         const messageObject = {
+            type: entry.type,
+            date: dateTransform(timeStamp()),
+            data: {
+               message: entry.message
+            }
+         }
+         this.chat.push(messageObject);
       },
       addFileToChat(entry){
          let versionLength = 0
          this.chat.map(item => {item.type === 'file' ? versionLength += 1 : null})
-         const timeStamp = new Date(Date.now())
          
          const fileObject = {
             type: 'file',
-            date: dateTransform(timeStamp),
+            date: dateTransform(timeStamp()),
             data: {
                version: `VERSIÓN ${versionLength + 1}`,
                title: entry.name,
@@ -74,6 +80,10 @@ export const useChatStore = defineStore('chat', {
       }
    }
 })
+
+function timeStamp (){
+   return new Date(Date.now())
+}
 
 function dateTransform  (date) {
    const day = date.getDate()
