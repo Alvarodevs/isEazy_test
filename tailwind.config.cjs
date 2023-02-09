@@ -7,7 +7,9 @@ module.exports = {
         'main': '#F1237F',
         'white': '#FFFFFF',
         'blue': '#0C8CFA',
-        'red': '#FA5939'
+        'red': '#FA5939',
+        'grey-border-input': '#DADADA',
+        'grey-bg-input': '#F9F9F8'
       }
     },
     fontFamily: {
