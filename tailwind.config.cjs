@@ -20,7 +20,8 @@ module.exports = {
       md: "770px"
     },
     borderWidth: {
-      '1': '1px'
+      '1': '1px',
+      '2': '2px'
     }
   },
   plugins: [],

@@ -31,11 +31,12 @@
                   leave-to-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                >
                   <div
-                     class="relative transform w-96  rounded-md bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl border-red border-1"
+                     class="relative transform w-96 rounded-md bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl border-red border-1"
                      v-show="isModalActive"
                   >
                      <HeaderModal @modalFalse="setModalFalse" />
-                     <Footer @modalFalse="setModalFalse" />
+                     <Chat />
+                     <Footer/>
                   </div>
                </transition>
             </div>
@@ -46,11 +47,14 @@
 
 <script>
 import HeaderModal from "./HeaderModal.vue";
+import Chat from "./Chat.vue";
 import Footer from "./Footer.vue";
+
 export default {
    components: {
-      HeaderModal,
-      Footer,
+    HeaderModal,
+    Chat,
+    Footer,
    },
    props: {
       isModalActive: Boolean,
