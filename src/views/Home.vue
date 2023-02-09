@@ -1,5 +1,5 @@
 <template>
-   <main class="flex min-h-screen w-screen font-Titilium">
+   <main class="flex min-h-screen w-screen font-Titilium overflow-hidden">
       <section class="w-1/2 flex flex-col m-auto">
          <div class="flex flex-row gap-5 mb-3 justify-center">
             <h2 class="pt-1 text-2xl">Welcome to</h2>

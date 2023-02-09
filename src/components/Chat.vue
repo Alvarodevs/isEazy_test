@@ -1,5 +1,5 @@
 <template lang="">
-   <div class="w-full flex flex-col h-5/6 overflow-y-scroll">
+   <div class="w-full flex flex-col h-[25rem] overflow-y-scroll">
       <div v-for="entry in chatStore.chat">
          <div v-if="entry.type === 'file'">
             <FileEntry :data=entry></FileEntry>
@@ -10,8 +10,6 @@
          <div v-else-if="entry.type === 'teacher'">
             <TeacherEntry :data=entry />
          </div>
-
-         <!-- {{ entry }} -->
       </div>
    </div>
 </template>

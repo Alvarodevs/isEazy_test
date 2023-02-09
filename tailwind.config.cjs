@@ -8,8 +8,8 @@ module.exports = {
         'white': '#FFFFFF',
         'blue': '#0C8CFA',
         'red': '#FA5939',
-        'grey-border-input': '#DADADA',
-        'grey-bg-input': '#F9F9F8'
+        'grey-border': '#DADADA',
+        'grey-bg': '#E6E6E6'
       }
     },
     fontFamily: {

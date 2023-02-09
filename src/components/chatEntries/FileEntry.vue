@@ -1,7 +1,7 @@
 <template>
    <div class="w-full p-2">
       <div
-         class="w-11/12 flex justify-between m-auto py-2 border-grey-border-input"
+         class="w-11/12 flex justify-between m-auto py-2 border-grey-border"
          :class="data.data.version === 'VERSIÓN 1' ? 'border-b-1' : 'border-y-1'"
       >
          <div class="w-full pl-5">
