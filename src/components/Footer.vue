@@ -27,10 +27,12 @@ const chatStore = useChatStore();
 const message = ref('')
 
 function submit () {
-   chatStore.addMessageToChat({
-      type: "student",
-      message: message.value,
-   });
+   if (message.value){
+      chatStore.addMessageToChat({
+         type: "student",
+         message: message.value,
+      });
+   }
    return message.value = ''
 }
 </script>
