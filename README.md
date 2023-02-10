@@ -18,6 +18,8 @@ This project shows a simple landing page, where clicking the "Open" button, a mo
 2. Within your terminal, once you´re located in project´s folder type: `npm install`
 3. Once every dependencies have been installed, type on your terminal: `npm run dev` . As it finishes you can visit [This link](http://127.0.0.1:5173/)
 
-## Recommended IDE Setup
+## Contact
+Any comment, question or suggestion you can find me on: 
+![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)(www.linkedin.com/alvarodevs4you)
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
